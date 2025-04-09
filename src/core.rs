@@ -15,12 +15,12 @@
 use std::collections::HashMap;
 
 use bitvec::vec::BitVec;
-use cuaoa::prelude::AOASampleSet;
-use cuaoa::prelude::BFSampleSet;
-use cuaoa::prelude::Gradients;
-use cuaoa::prelude::Parameterization;
-use cuaoa::prelude::ParameterizationMethod;
-use cuaoa::prelude::Polynomial as CuaoaPolynomial;
+use aqaoa::prelude::AOASampleSet;
+use aqaoa::prelude::BFSampleSet;
+use aqaoa::prelude::Gradients;
+use aqaoa::prelude::Parameterization;
+use aqaoa::prelude::ParameterizationMethod;
+use aqaoa::prelude::Polynomial as AqaoaPolynomial;
 use numpy::IntoPyArray;
 use numpy::PyArray2;
 use numpy::PyArrayMethods;
@@ -30,29 +30,29 @@ use pyo3::exceptions::PyRuntimeError;
 use pyo3::exceptions::PyValueError;
 use pyo3::prelude::*;
 
-#[pyclass(mapping, module = "pycuaoa", subclass)]
+#[pyclass(mapping, module = "pyaqaoa", subclass)]
 pub struct Polynomial {
     pub keys: Vec<usize>,
     pub values: Vec<f64>,
 }
 
 impl Polynomial {
-    pub fn from_cuaoa(polynomial: &CuaoaPolynomial) -> Polynomial {
+    pub fn from_aqaoa(polynomial: &AqaoaPolynomial) -> Polynomial {
         Polynomial {
             keys: polynomial.keys.clone(),
             values: polynomial.values.clone(),
         }
     }
 
-    pub fn into(&self) -> CuaoaPolynomial {
-        CuaoaPolynomial {
+    pub fn into(&self) -> AqaoaPolynomial {
+        AqaoaPolynomial {
             keys: self.keys.clone(),
             values: self.values.clone(),
         }
     }
 }
 
-#[pyclass(mapping, module = "pycuaoa", subclass)]
+#[pyclass(mapping, module = "pyaqaoa", subclass)]
 #[derive(Clone)]
 pub struct Parameters {
     #[pyo3(get)]
@@ -89,7 +89,7 @@ impl Parameters {
     }
 }
 
-#[pyclass(module = "pycuaoa", subclass)]
+#[pyclass(module = "pyaqaoa", subclass)]
 #[derive(Clone)]
 pub struct OptimizeResult {
     #[pyo3(get)]
@@ -126,7 +126,7 @@ impl OptimizeResult {
     }
 }
 
-#[pyclass(module = "pycuaoa", subclass)]
+#[pyclass(module = "pyaqaoa", subclass)]
 #[derive(Clone)]
 pub struct SampleSet {
     num_qubits: usize,
@@ -239,7 +239,7 @@ pub fn build_parameterization(
 #[pyfunction]
 #[pyo3(name = "make_polynomial")]
 pub fn make_polynomial(adjacency_matrix: PyReadonlyArray2<f64>) -> Polynomial {
-    Polynomial::from_cuaoa(&cuaoa::make_polynomial(&make_adjacency_matrix(
+    Polynomial::from_aqaoa(&aqaoa::make_polynomial(&make_adjacency_matrix(
         adjacency_matrix,
     )))
 }
@@ -247,5 +247,5 @@ pub fn make_polynomial(adjacency_matrix: PyReadonlyArray2<f64>) -> Polynomial {
 #[pyfunction]
 #[pyo3(name = "make_polynomial_from_dict")]
 pub fn make_polynomial_from_map(dictionary: HashMap<Vec<usize>, f64>) -> Polynomial {
-    Polynomial::from_cuaoa(&cuaoa::make_polynomial_from_map(&dictionary))
+    Polynomial::from_aqaoa(&aqaoa::make_polynomial_from_map(&dictionary))
 }

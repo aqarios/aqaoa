@@ -12,21 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-mod brute_force;
 mod core;
-mod aqaoa;
-mod handle;
-mod pymodule;
-mod utils;
+pub mod aqaoa;
+mod polynomial;
 
-pub use core::Parameters;
-
-use pyo3::prelude::*;
-
-#[pymodule]
-#[pyo3(name = "_core")]
-fn pyaqaoa(m: &Bound<'_, PyModule>) -> PyResult<()> {
-    m.add("__version__", env!("CARGO_PKG_VERSION"))?;
-    pymodule::register_pyaqaoa(m)?;
-    Ok(())
-}
+pub use polynomial::make_polynomial;

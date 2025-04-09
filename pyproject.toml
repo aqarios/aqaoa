@@ -1,22 +1,28 @@
-[build-system]
-requires = ["maturin>=1.4,<2.0", "patchelf"]
-build-backend = "maturin"
-
 [project]
-name = "pycuaoa"
+name = "pyaqaoa"
+dynamic = ["version"]
+description = "AqAOA is a derivative of CUAOA (Apache-2.0): A Novel CUDA-Accelerated Simulation Framework for the QAOA for Python"
+authors = [
+  { name = "Jonas Blenninger", email = "jonas.blenninger@aqarios.com"}
+]
+# license = {text = "Apache-2.0"}
+readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dynamic = ["version"]
 dependencies = [
   "numpy == 1.26.4"
 ]
-dev-dependencies = [
-  "networkx == 3.2.1"
-]
+
+[project.urls]
+repository = "https://github.com/aqarios/aqaoa"
+original_project = "https://github.com/jflxb/cuaoa"
+original_project_paper_doi = "https://arxiv.org/abs/2407.13012" 
+original_project_doi = "https://doi.org/10.5281/zenodo.12750207"
+
 
 [tool.uv]
 package = true
@@ -24,16 +30,21 @@ cache-keys = [
   { file = "pyproject.toml" },
   { file = "Cargo.toml" },
   { file = "**/*.rs" },
-  { file = "src/pycuaoa/**/*.pyi" },
-  { file = "src/pycuaoa/**/*.py" }
+  { file = "src/pyaqaoa/**/*.pyi" },
+  { file = "src/pyaqaoa/**/*.py" }
 ]
 
 [tool.maturin]
-module-name = "pycuaoa._core"
-python-packages = ["pycuaoa"]
+module-name = "pyaqaoa._core"
+python-packages = ["pyaqaoa"]
 python-source = "src"
 include = [
-  "src/pycuaoa/**/*.pyi", 
-  "src/pycuaoa/**/*.py", 
-  "src/pycuaoa/py.typed",
+  "src/pyaqaoa/**/*.pyi", 
+  "src/pyaqaoa/**/*.py", 
+  "src/pyaqaoa/py.typed",
+]
+
+[dependency-groups]
+dev = [
+    "networkx==3.2.1",
 ]
