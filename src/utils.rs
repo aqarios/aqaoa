@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use cuaoa::prelude::{get_cuda_devices_info as gcdi, CudaDevice};
+use aqaoa::prelude::{get_cuda_devices_info as gcdi, CudaDevice};
 use pyo3::prelude::*;
 
 #[pyclass(mapping, module = "utils", subclass)]

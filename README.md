@@ -1,30 +1,41 @@
-# CUAOA: A Novel CUDA-Accelerated Simulation Framework for the QAOA
+# AqAOA
 
-[![arXiv](https://img.shields.io/badge/arXiv-2407.13012-b31b1b.svg)](https://arxiv.org/abs/2407.13012)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12750207.svg)](https://doi.org/10.5281/zenodo.12750207)
+> This software is a derivative work based on [CUAOA](https://github.com/jflxb/cuaoa), licensed under the Apache License 2.0.
+> [![arXiv](https://img.shields.io/badge/arXiv-2407.13012-b31b1b.svg)](https://arxiv.org/abs/2407.13012)
+> [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12750207.svg)](https://doi.org/10.5281/zenodo.12750207)
 
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Installation](#installation)
+2. [Original Project Attribution](#original-project-attribution)
+3. [Changes from CUAOA](#changes-from-cuaoa)
+4. [Installation](#installation)
    - [Prerequisites](#prerequisites)
    - [Conda Environment Requirement](#conda-environment-requirement)
    - [Installing from Source](#installing-from-source)
    - [Security Note](#security-note)
    - [Docker Installation](#docker-installation)
    - [Troubleshooting](#troubleshooting)
-3. [Usage](#usage)
-4. [License and Compliance](#license-and-compliance)
-5. [Citation](#citation)
+5. [Usage](#usage)
+6. [License and Compliance](#license-and-compliance)
+7. [Citation](#citation)
+
+## Original Project Attribution
+
+This project is based on [CUAOA](https://github.com/jflxb/cuaoa). CUAOA is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) files for details.
+
+## Changes from CUAOA
+- Renamed most user visible instances of `cuaoa` to `aqaoa` in the code
+- Renamed internal directory `cuaoa` to [`aqaoa`](./aqaoa)
 
 ## Overview
 
-CUAOA is a GPU accelerated QAOA simulation framework utilizing the [NVIDIA CUDA toolkit](https://developer.nvidia.com/cuda-toolkit). This framework offers a complete interface for QAOA simulations, enabling the calculation of (exact) expectation values, direct access to the statevector, fast sampling, and high-performance optimization methods using an advanced state-of-the-art gradient calculation technique. The framework is designed for use in Python and Rust, providing flexibility for integration into a wide range of applications, including those requiring fast algorithm implementations leveraging QAOA at its core.
+AqAOA is a GPU accelerated QAOA simulation framework utilizing the [NVIDIA CUDA toolkit](https://developer.nvidia.com/cuda-toolkit). This framework offers a complete interface for QAOA simulations, enabling the calculation of (exact) expectation values, direct access to the statevector, fast sampling, and high-performance optimization methods using an advanced state-of-the-art gradient calculation technique. The framework is designed for use in Python and Rust, providing flexibility for integration into a wide range of applications, including those requiring fast algorithm implementations leveraging QAOA at its core.
 
 ## Installation
 
 To streamline the installation of our project, utilize the [`install.sh`](./install.sh) script. This script automates the process by cloning the repository, building the project, and installing it on your system.
-We plan to make CUAOA installable via pip in the upcoming future.
+We plan to make AqAOA installable via pip in the upcoming future.
 
 ### Prerequisites
 
@@ -36,6 +47,7 @@ Before proceeding with the installation, ensure the following tools are installe
 - [git](https://git-scm.com/): Required for cloning the repository.
 - [pip](https://pip.pypa.io/en/stable/installing/): Necessary for Python package installations.
 - [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html): A crucial tool for environment and package management.
+- [uv](https://docs.astral.sh/uv/): Another crucial tool for environment and package management.
 - [Python >= 3.11](https://www.python.org/downloads/): Required for running the Python code. Other versions may work but have not been tested.
 
 ### Conda Environment Requirement
@@ -89,9 +101,9 @@ bash install.sh
 
 ### Docker Installation
 
-To provide an alternative installation method using Docker, follow the steps below to build and run the CUAOA application within a Docker container.
+To provide an alternative installation method using Docker, follow the steps below to build and run the AqAOA application within a Docker container.
 
-This section guides you through building the Docker image and running the CUAOA application in a container.
+This section guides you through building the Docker image and running the AqAOA application in a container.
 
 #### Prerequisites
 
@@ -100,23 +112,23 @@ This section guides you through building the Docker image and running the CUAOA 
 
 #### Building the Docker Image
 
-Open a terminal and navigate to the root directory of the CUAOA project. Then, execute the following command to build the Docker image:
+Open a terminal and navigate to the root directory of the AqAOA project. Then, execute the following command to build the Docker image:
 
 ```bash
-docker buildx build --tag cuaoa-image --load .
+docker buildx build --tag aqaoa-image --load .
 ```
 
-This command uses Docker Buildx to build the image and tags it as `cuaoa-image`.
+This command uses Docker Buildx to build the image and tags it as `aqaoa-image`.
 
 #### Running the Docker Container
 
 After successfully building the image, run the following command to start a container:
 
 ```bash
-docker run --rm -it --gpus all cuaoa-image
+docker run --rm -it --gpus all aqaoa-image
 ```
 
-This command runs the `cuaoa-image` container interactively with access to all available GPUs.
+This command runs the `aqaoa-image` container interactively with access to all available GPUs.
 
 **Parameters Explained:**
 
@@ -126,7 +138,7 @@ This command runs the `cuaoa-image` container interactively with access to all a
 
 For more detailed information on these and other Docker run options, please refer to the [Docker CLI documentation](https://docs.docker.com/engine/reference/commandline/run/).
 
-By following these steps, you can build and run the CUAOA application within a Docker container, leveraging your system's GPU resources. 
+By following these steps, you can build and run the AqAOA application within a Docker container, leveraging your system's GPU resources. 
 
 ### Troubleshooting
 
@@ -137,27 +149,27 @@ By following these steps, you can build and run the CUAOA application within a D
 > - Verify that the `conda` environment is activated before running the installation script.
 > - Review permissions if encountering errors related to script execution. Adjusting script permissions with `chmod +x install.sh` may be required.
 
-For further assistance, please visit our [Issues page](https://github.com/jflxb/cuaoa/issues) and describe the problem you're facing. We are committed to providing support and resolving installation queries.
+For further assistance, please visit our [Issues page](https://github.com/jflxb/aqaoa/issues) and describe the problem you're facing. We are committed to providing support and resolving installation queries.
 
 ## Usage
 
-With CUAOA installed, you can start simulating QAOA. The essential steps for a simulation are:
+With AqAOA installed, you can start simulating QAOA. The essential steps for a simulation are:
 
 1. Define the objective and convert it to one of the expected formats.
 2. Create the handle required for interactions with the simulator.
-3. Create the CUAOA class to access the simulator's functionality.
+3. Create the AqAOA class to access the simulator's functionality.
 
 First, we define a simple MaxCut problem and use it throughout this usage guide. We will focus on creating the problem from the graph's adjacency matrix.
 
 ```python
 import numpy as np
-import pycuaoa
+import pyaqaoa
 
 W = np.array([[0.0, 1.0, 0.0], [1.0, 0.0, 1.0], [0.0, 1.0, 0.0]])
 
-# Initialize the CUAOA class with the optimization problem.
-# For further initialization options, please refer to the CUAOA interface.
-sim = pycuaoa.CUAOA(W, depth=2)
+# Initialize the AqAOA class with the optimization problem.
+# For further initialization options, please refer to the AqAOA interface.
+sim = pyaqaoa.AqAOA(W, depth=2)
 
 # Create the handle for interactions with the simulator. We must specify the minimum 
 # number of qubits required during the simulations using the given handle. 
@@ -165,7 +177,7 @@ sim = pycuaoa.CUAOA(W, depth=2)
 # Setting it to a higher value than needed will not affect the correctness of the 
 # simulations but will consume more memory.
 num_qubits = 3
-handle = pycuaoa.create_handle(num_qubits)
+handle = pyaqaoa.create_handle(num_qubits)
 
 expectation_value = sim.expectation_value(handle)  # Calculate the expectation value.
 print(expectation_value)
@@ -205,10 +217,10 @@ optimize_result = sim.optimize(
     handle
 )  # Optimize the parameters using the built-in optimizer.
 # This runs the optimization with default parameters. You can also control the 
-# optimization by passing a `pycuaoa.LBFGSParameters` object, for example:
+# optimization by passing a `pyaqaoa.LBFGSParameters` object, for example:
 # optimize_result = sim.optimize(
 #     handle, 
-#     lbfgs_parameters=pycuaoa.LBFGSParameters(max_iterations=10)
+#     lbfgs_parameters=pyaqaoa.LBFGSParameters(max_iterations=10)
 # )
 # The optimized parameters are automatically set in the `sim` object but can be 
 # accessed with: 
@@ -226,14 +238,14 @@ print(sampleset_after_optimization.samples())
 # array([[False, True, False]])
 ```
 
-To use `CUAOA` with an arbitrary optimization problem, you can use the `from_map` function. For example, for the MaxCut problem used in the previous example:
+To use `AqAOA` with an arbitrary optimization problem, you can use the `from_map` function. For example, for the MaxCut problem used in the previous example:
 
 ```python
 terms = {
     (0, 1): 2.0, (1, 2): 2.0,
     (0,): -1.0, (1,): -2.0, (2,): -1.0
 }
-sim = pycuaoa.CUAOA.from_map(num_qubits, terms, depth=2)
+sim = pyaqaoa.AqAOA.from_map(num_qubits, terms, depth=2)
 ```
 
 The remaining interactions with the `sim` object remain the same.
@@ -255,7 +267,11 @@ By using this software, you agree to comply with the licenses of all dependencie
 
 ## Citation
 
-If you use this software, please cite it as follows:
+This project is a derivative of [CUAOA](https://github.com/jflxb/cuaoa). If you use this software in your research or publication, please cite both the original authors and this derivative:
+
+### Original Project Citation
+
+Please cite the original work by CUAOA authors as follows:
 
 ```bibtex
 @misc{stein2024cuaoanovelcudaacceleratedsimulation,
@@ -287,3 +303,4 @@ If you use this software, please cite it as follows:
   url={https://doi.org/10.5281/zenodo.12750207}
 }
 ```
+

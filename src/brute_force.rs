@@ -14,7 +14,7 @@
 
 use std::collections::HashMap;
 
-use cuaoa::prelude::{BFFunctions, BFGetters, BFInit, CUBF};
+use aqaoa::prelude::{BFFunctions, BFGetters, BFInit, CUBF};
 use numpy::PyReadonlyArray2;
 use pyo3::{exceptions::PyRuntimeError, prelude::*};
 
@@ -23,7 +23,7 @@ use crate::{
     handle::PyHandle,
 };
 
-#[pyclass(mapping, module = "pycuaoa", subclass)]
+#[pyclass(mapping, module = "pyaqaoa", subclass)]
 pub struct BruteFroce {
     inner: CUBF,
 }
@@ -70,8 +70,8 @@ impl BruteFroce {
     }
 
     #[pyo3(name = "get_polynomial", text_signature = "(self)")]
-    pub fn get_polynomial(&self, py: Python) -> PyPolynomial {
-        PyPolynomial::from_cuaoa(py, self.inner.polynomial())
+    pub fn get_polynomial(&self) -> PyPolynomial {
+        PyPolynomial::from_aqaoa(self.inner.polynomial())
     }
 
     #[pyo3(name = "get_num_nodes", text_signature = "(self)")]

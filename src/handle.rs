@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use cuaoa::prelude::Handle;
+use aqaoa::prelude::Handle;
 use pyo3::{exceptions::PyRuntimeError, prelude::*};
 
-#[pyclass(mapping, module = "pycuaoa")]
+#[pyclass(mapping, module = "pyaqaoa")]
 pub struct PyHandle {
     is_destroyed: bool,
     handle: Handle,
