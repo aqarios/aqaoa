@@ -9,7 +9,7 @@ description = "AqAOA is a derivative of CUAOA (Apache-2.0): A Novel CUDA-Acceler
 authors = [
   { name = "Jonas Blenninger", email = "jonas.blenninger@aqarios.com"}
 ]
-# license = {text = "Apache-2.0"}
+license = {text = "Apache-2.0"}
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [
