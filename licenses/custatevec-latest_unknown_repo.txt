@@ -1,0 +1,7 @@
+custatevec vlatest
+Author: NVIDIA Corporation
+Repository: https://developer.nvidia.com/cuquantum-sdk
+License: NVIDIA cuQuantum SDK License
+Source: https://docs.nvidia.com/cuda/cuquantum/latest/license.html#nvidia-cuquantum-sdk
+
+See license: https://docs.nvidia.com/cuda/cuquantum/latest/license.html#nvidia-cuquantum-sdk

@@ -3,6 +3,63 @@ revision = 1
 requires-python = ">=3.11"
 
 [[package]]
+name = "cudensitymat-cu12"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cutensor-cu12" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/cb/39/eee627728e5a7f9c058c459ee51379665a087fc8cc8455a32806953ff241/cudensitymat_cu12-0.1.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:f1dc6e9365ec7d8dcdd3782cc07ac526edf1344b1e6e23bb95e77a37fc1b5648", size = 4020541 },
+    { url = "https://files.pythonhosted.org/packages/01/5f/e2882162cc4172157d9042d215b6c37aa1ceee0623f30fadbe69da66adcb/cudensitymat_cu12-0.1.0-py3-none-manylinux2014_x86_64.whl", hash = "sha256:e2d9ccbb712329959ea14cb86572d4ee4ccc1f32f29ccd2386340b4393f34f49", size = 4028303 },
+]
+
+[[package]]
+name = "cuquantum-cu12"
+version = "25.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cudensitymat-cu12" },
+    { name = "custatevec-cu12" },
+    { name = "cutensornet-cu12" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/69/b1/7f16a82234ba31ed4f2699ce1bb889718fffb27cc3ff0f95e7be3393f9f8/cuquantum_cu12-25.3.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:9e604fadc38355278aec2fefe6777c2771444b1bd2c3baba8ec362831ee7a739", size = 7237 },
+    { url = "https://files.pythonhosted.org/packages/ea/7b/20a77d102562a407bd9f8c9557b0ffec9d6e3e41ecbebc5c27dc683b0326/cuquantum_cu12-25.3.0-py3-none-manylinux2014_x86_64.whl", hash = "sha256:2d7bef6330546e48d9e3a874aae420339361f9fe6f4d9cd683a5c698116f08aa", size = 7237 },
+]
+
+[[package]]
+name = "custatevec-cu12"
+version = "1.8.0"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/db/40/a0e17df2d625a02af5387b4850bb46db555545e5d4352ec75046f76440ae/custatevec_cu12-1.8.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:4b69508c1bd4f5b91f381d3f4590613ef53559078fb0543f230c5fe3011d6fbb", size = 44339742 },
+    { url = "https://files.pythonhosted.org/packages/c9/a1/7fbe7b4ca47ed7356973c047e043f3ae272e02389feadc3a50dcf32c8adc/custatevec_cu12-1.8.0-py3-none-manylinux2014_x86_64.whl", hash = "sha256:9ff2db7f3355c9fb3d643dcf6bf9bfdebc6a7f0b1d284742039148f33c43913d", size = 44301072 },
+]
+
+[[package]]
+name = "cutensor-cu12"
+version = "2.2.0"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8f/c1/861f5084c545bf7ad04c7509f8f6a30530ff6d262ceffb3ba248ba88c4d2/cutensor_cu12-2.2.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:3b4faf4a036b8b178cb15305e37f9e3263339fc3272c117c568805ce04d39f3e", size = 202207555 },
+    { url = "https://files.pythonhosted.org/packages/ae/88/16b2528417dc017f3e950f02e4c6f4123cdc1940cae4f2edfd1bfd828e35/cutensor_cu12-2.2.0-py3-none-manylinux2014_x86_64.whl", hash = "sha256:ecec61eac87a903e74b069dc86e53a273c60f496fd6b7c2203fbc110c8b4819d", size = 202265559 },
+    { url = "https://files.pythonhosted.org/packages/8d/93/3c6fce7353f20bdf8f760b16d3f180a160ccd2025242d78918d9d704d5fa/cutensor_cu12-2.2.0-py3-none-win_amd64.whl", hash = "sha256:445464d39e25d1e67761694a676c21694c37b668a3e7e23df760150957318f91", size = 182788564 },
+]
+
+[[package]]
+name = "cutensornet-cu12"
+version = "2.7.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cutensor-cu12" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b9/0d/851ab8543cc33154f8e56d7bca32c0a5782a0cbbed1931090e56dc92a45d/cutensornet_cu12-2.7.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:41d16f9b8551757dc95cfad31e9b06bf902772c3c4dd5fed75b3ac18f67152e8", size = 2574838 },
+    { url = "https://files.pythonhosted.org/packages/29/5f/f3db7d8aa98526f5464f98213f890694cdefb831d5c785d02aa7d66f5bf1/cutensornet_cu12-2.7.0-py3-none-manylinux2014_x86_64.whl", hash = "sha256:ad8e15e0423e1cf2814abbd2d81f63264e064229107f0830db093f2c6c986396", size = 2635186 },
+]
+
+[[package]]
 name = "networkx"
 version = "3.2.1"
 source = { registry = "https://pypi.org/simple" }
@@ -39,6 +96,7 @@ wheels = [
 name = "pyaqaoa"
 source = { editable = "." }
 dependencies = [
+    { name = "cuquantum-cu12" },
     { name = "numpy" },
 ]
 
@@ -48,7 +106,10 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "numpy", specifier = "==1.26.4" }]
+requires-dist = [
+    { name = "cuquantum-cu12", specifier = "==25.3.0" },
+    { name = "numpy", specifier = "==1.26.4" },
+]
 
 [package.metadata.requires-dev]
 dev = [{ name = "networkx", specifier = "==3.2.1" }]
