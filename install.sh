@@ -49,4 +49,4 @@ else
     exit 1
 fi
 
-echo -e "To finalize your installation, please run the following command in your current shell:\n    export LD_LIBRARY_PATH=\${CONDA_PREFIX}/lib:\${pwd}/aqaoa/internal/lib/:\${LD_LIBRARY_PATH}"
+echo -e "To finalize your installation, please run the following command in your current shell:\n    export LD_LIBRARY_PATH=\${CONDA_PREFIX}/lib:\$(pwd)/aqaoa/internal/lib/:\${LD_LIBRARY_PATH}"

@@ -20,7 +20,6 @@
  * limitations under the License.
  */
 
-#ifndef POLYNOMIAL_WRAPPER_HPP
 #include "aqaoa/aqaoa.hpp"
 #include "aqaoa/functions.hpp"
 #include <cuda_runtime.h>
