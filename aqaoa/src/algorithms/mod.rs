@@ -1,3 +1,9 @@
+// Modified by Aqarios GmbH
+//
+// Changes: Renamed all occurrences of 'cuaoa' to 'aqaoa'.
+//
+// Original License Notice:
+//
 // Copyright 2024 Jonas Blenninger
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +19,7 @@
 // limitations under the License.
 
 pub mod aoa;
-pub mod bf;
 pub mod aqaoa;
+pub mod bf;
 pub mod cubf;
 pub mod polynomial;

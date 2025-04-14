@@ -1,3 +1,9 @@
+// Modified by Aqarios GmbH
+//
+// Changes: Renamed all occurrences of 'cuaoa' to 'aqaoa'.
+//
+// Original License Notice:
+//
 // Copyright 2024 Jonas Blenninger
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +20,13 @@
 
 use std::collections::HashMap;
 
-use bitvec::vec::BitVec;
 use aqaoa::prelude::AOASampleSet;
 use aqaoa::prelude::BFSampleSet;
 use aqaoa::prelude::Gradients;
 use aqaoa::prelude::Parameterization;
 use aqaoa::prelude::ParameterizationMethod;
 use aqaoa::prelude::Polynomial as AqaoaPolynomial;
+use bitvec::vec::BitVec;
 use numpy::IntoPyArray;
 use numpy::PyArray2;
 use numpy::PyArrayMethods;

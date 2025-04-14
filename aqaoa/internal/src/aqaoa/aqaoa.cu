@@ -1,4 +1,11 @@
-/* Copyright 2024 Jonas Blenninger
+/* 
+ * Modified by Aqarios GmbH
+ * 
+ * Changes: Renamed all occurrences of 'cuaoa' to 'aqaoa'.
+ *
+ * Original License Notice:
+ *
+ * Copyright 2024 Jonas Blenninger
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +20,7 @@
  * limitations under the License.
  */
 
+#ifndef POLYNOMIAL_WRAPPER_HPP
 #include "aqaoa/aqaoa.hpp"
 #include "aqaoa/functions.hpp"
 #include <cuda_runtime.h>

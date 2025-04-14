@@ -1,3 +1,9 @@
+// Modified by Aqarios GmbH
+//
+// Changes: Renamed all occurrences of 'cuaoa' to 'aqaoa'.
+//
+// Original License Notice:
+//
 // Copyright 2024 Jonas Blenninger
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +23,7 @@ use std::collections::HashMap;
 use aqaoa::{
     algorithms::aoa::{AOAAssociatedFunctions, AOAFunctions, AOAGetters, AOAInit},
     core::{LBFGSParameters, RXMethod},
-    prelude::{make_randnums, AOASetters, ParameterizationMethod, AqAOA as AqAOAInner},
+    prelude::{make_randnums, AOASetters, AqAOA as AqAOAInner, ParameterizationMethod},
 };
 use numpy::{Complex64, PyArray1, PyArrayMethods, PyReadonlyArray1, PyReadonlyArray2, ToPyArray};
 use pyo3::{

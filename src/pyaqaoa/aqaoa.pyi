@@ -1,3 +1,9 @@
+# Modified by Aqarios GmbH
+#
+# Changes: Renamed all occurrences of 'cuaoa' to 'aqaoa'.
+#
+# Original License Notice:
+#
 # Copyright 2024 Jonas Blenninger
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,6 +17,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 
 from numpy import float64
 from numpy.typing import NDArray

@@ -1,3 +1,9 @@
+// Modified by Aqarios GmbH
+//
+// Changes: Renamed all occurrences of 'cuaoa' to 'aqaoa'.
+//
+// Original License Notice:
+//
 // Copyright 2024 Jonas Blenninger
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,11 +22,11 @@ use aqaoa::core::{LBFGSLinesearchAlgorithm, LBFGSParameters, RXMethod};
 use aqaoa::parameters::ParameterizationMethod;
 use pyo3::prelude::*;
 
+use crate::aqaoa::{expectation_value, optimize, AqAOA};
 use crate::brute_force::BruteFroce;
 use crate::core::{
     make_polynomial, make_polynomial_from_map, OptimizeResult, Parameters, Polynomial, SampleSet,
 };
-use crate::aqaoa::{expectation_value, optimize, AqAOA};
 use crate::handle::{create_handle, PyHandle};
 use crate::utils::{get_cuda_devices_info, PyCudaDevice};
 
