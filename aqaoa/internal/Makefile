@@ -3,7 +3,9 @@ NVCC := $(CUDA_PATH)/bin/nvcc
 GPP := g++
 
 # Compiler and linker flags
-NVCC_FLAGS := -std=c++20 -arch=sm_86 --expt-relaxed-constexpr -Xcompiler -fPIC,-O3
+# NVCC_FLAGS := -std=c++20 -arch=sm_86 --expt-relaxed-constexpr -Xcompiler -fPIC,-O3
+# NVCC_FLAGS := -std=c++20 -arch=sm_75 --expt-relaxed-constexpr -Xcompiler -fPIC,-O3
+NVCC_FLAGS := -std=c++20 -gencode=arch=compute_75,code=sm_75 --expt-relaxed-constexpr -Xcompiler -fPIC,-O3
 GPP_FLAGS := -Iinclude -std=c++20 -march=native -O3 -Wall -fPIC -fopenmp -flto
 LD_FLAGS := -L$(CUDA_PATH)/lib64 -L$(CONDA_PREFIX)/lib -lcudart -lcustatevec -llbfgs -lstdc++ -lgomp
 
