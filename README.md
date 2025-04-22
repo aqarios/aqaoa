@@ -149,7 +149,7 @@ By following these steps, you can build and run the AqAOA application within a D
 > - Verify that the `conda` environment is activated before running the installation script.
 > - Review permissions if encountering errors related to script execution. Adjusting script permissions with `chmod +x install.sh` may be required.
 
-For further assistance, please visit our [Issues page](https://github.com/jflxb/aqaoa/issues) and describe the problem you're facing. We are committed to providing support and resolving installation queries.
+For further assistance, please visit our [Issues page](https://github.com/aqarios/aqaoa/issues) and describe the problem you're facing. We are committed to providing support and resolving installation queries.
 
 ## Usage
 

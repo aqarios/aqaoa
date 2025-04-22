@@ -45,7 +45,7 @@ RUN . ${CONDA_DIR}/etc/profile.d/conda.sh && conda create -n aqaoa python=3.11 -
 RUN echo "conda deactivate" >> ~/.bashrc
 RUN echo "source ~/aqaoa/.venv/bin/activate" >> ~/.bashrc
 
-RUN echo "\necho \"============================\nAqAOA License and Compliance\n============================\n\nThe AqAOA project is licensed under the Apache License 2.0. See the /LICENSE file for details.\nAlternatively the LICENSE can be obtained here: https://github.com/JFLXB/aqaoa/blob/main/LICENSE\n\nBy using this software, you agree to comply with the licenses of all dependencies used in this project.\nNotably, the cuStateVec library has its own licensing terms which must be adhered to:\nhttps://docs.nvidia.com/cuda/cuquantum/latest/license.html\n\"" >> /etc/bash.bashrc
+RUN echo "\necho \"============================\nAqAOA License and Compliance\n============================\n\nThe AqAOA project is licensed under the Apache License 2.0. See the /LICENSE file for details.\nAlternatively the LICENSE can be obtained here: https://github.com/aqarios/aqaoa/blob/main/LICENSE\n\nBy using this software, you agree to comply with the licenses of all dependencies used in this project.\nNotably, the cuStateVec library has its own licensing terms which must be adhered to:\nhttps://docs.nvidia.com/cuda/cuquantum/latest/license.html\n\"" >> /etc/bash.bashrc
 
 COPY . /root/aqaoa
 RUN cp /root/aqaoa/LICENSE /root/LICENSE

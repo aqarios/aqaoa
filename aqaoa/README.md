@@ -56,7 +56,7 @@ To use the AqAOA Rust subpackage in your project, include it as a dependency in 
 
 ```toml
 [dependencies]
-aqaoa = { git = "https://github.com/jflxb/aqaoa", branch = "main" }
+aqaoa = { git = "https://github.com/aqarios/aqaoa", branch = "main" }
 ```
 
 This will pull the AqAOA package from the specified GitHub repository.
