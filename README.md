@@ -1,28 +1,32 @@
-# AqAOA
+# AqAOA 
 
-> This software is a derivative work based on [CUAOA](https://github.com/jflxb/cuaoa), licensed under the Apache License 2.0.
-> [![arXiv](https://img.shields.io/badge/arXiv-2407.13012-b31b1b.svg)](https://arxiv.org/abs/2407.13012)
-> [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12750207.svg)](https://doi.org/10.5281/zenodo.12750207)
+> [!TIP]
+> **Want to run AqAOA on the cloud?** See the [Usage on AWS](#usage-on-aws) section to learn how to launch an EC2 instance with the simulator preinstalled using the official AMI.
 
 ## Table of Contents
 
 1. [Overview](#overview)
 2. [Original Project Attribution](#original-project-attribution)
 3. [Changes from CUAOA](#changes-from-cuaoa)
-4. [Installation](#installation)
+4. [Overview](#overview)
+5. [Usage on AWS](#usage-on-aws)
+6. [Installation](#installation)
    - [Prerequisites](#prerequisites)
    - [Conda Environment Requirement](#conda-environment-requirement)
    - [Installing from Source](#installing-from-source)
    - [Security Note](#security-note)
    - [Docker Installation](#docker-installation)
    - [Troubleshooting](#troubleshooting)
-5. [Usage](#usage)
-6. [License and Compliance](#license-and-compliance)
-7. [Citation](#citation)
+7. [Usage](#usage)
+8. [License and Compliance](#license-and-compliance)
+9. [Citation](#citation)
 
 ## Original Project Attribution
 
 This project is based on [CUAOA](https://github.com/jflxb/cuaoa). CUAOA is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) files for details.
+
+[![arXiv](https://img.shields.io/badge/arXiv-2407.13012-b31b1b.svg)](https://arxiv.org/abs/2407.13012)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12750207.svg)](https://doi.org/10.5281/zenodo.12750207)
 
 ## Changes from CUAOA
 - Renamed most user visible instances of `cuaoa` to `aqaoa` in the code
@@ -31,6 +35,62 @@ This project is based on [CUAOA](https://github.com/jflxb/cuaoa). CUAOA is licen
 ## Overview
 
 AqAOA is a GPU accelerated QAOA simulation framework utilizing the [NVIDIA CUDA toolkit](https://developer.nvidia.com/cuda-toolkit). This framework offers a complete interface for QAOA simulations, enabling the calculation of (exact) expectation values, direct access to the statevector, fast sampling, and high-performance optimization methods using an advanced state-of-the-art gradient calculation technique. The framework is designed for use in Python and Rust, providing flexibility for integration into a wide range of applications, including those requiring fast algorithm implementations leveraging QAOA at its core.
+
+## Usage on AWS 
+
+[![Launch on AWS](https://img.shields.io/badge/Launch%20on-AWS-orange?logo=amazon-aws&style=for-the-badge)](https://aws.amazon.com/marketplace/pp/prodview-ynv4du526zpie)
+
+AqAOA is available as a preconfigured Amazon Machine Image (AMI) on the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-ynv4du526zpie), allowing you to run high-performance QAOA simulations on GPU-backed EC2 instances with minimal setup.
+
+### Steps to Get Started
+
+1. Go to the [AqAOA AMI on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-ynv4du526zpie).
+2. Subscribe to the AMI and follow the instructions to launch an EC2 instance.
+3. Choose a GPU-enabled EC2 instance type (*see overview below*).
+4. Connect to your instance via SSH and start using the AqAOA Python interface.
+
+### Overview of EC2 GPU Instances
+
+Below is an overview of GPU instances. These instances vary by GPU model, memory, and compute power. Choose based on the scale of your simulations:
+
+| Instance       | GPU         | GPU Memory | vCPU | vCPU Memory | Price                                                        |
+| -------------- | ----------- | ---------- | ---- | ----------- | ------------------------------------------------------------ |
+| `g4dn.xlarge`  | NVIDIA T4   | 16 GiB     | 4    | 16 GiB      | [G4 prices](https://aws.amazon.com/ec2/instance-types/g4/)   |
+| `g5.xlarge`    | NVIDIA A10G | 24 GiB     | 4    | 16 GiB      | [G5 prices](https://aws.amazon.com/ec2/instance-types/g5/)   |
+| `g6.xlarge`    | NVIDIA L4   | 24 GiB     | 4    | 16 GiB      | [G6 prices](https://aws.amazon.com/ec2/instance-types/g6/)   |
+| `g6e.xlarge`   | NVIDIA L40S | 48 GiB     | 4    | 32 GiB      | [G6e prices](https://aws.amazon.com/ec2/instance-types/g6e/) |
+
+> 💡 **Recommended**: Start with `g4dn.xlarge` for general use and scale up for more demanding simulations.
+
+### After Launch
+
+Once the instance is running:
+
+```bash
+# Connect to your instance
+ssh -i your-key.pem ec2-user@your-instance-ip
+
+# Activate the environment (if not already activated)
+conda activate aqaoa
+
+# Run the verification script to ensure everything is working as expected
+python ~/verify.py
+```
+
+Refer to the [Usage](#usage) section for usage examples.
+
+### Virtual Environment Information
+
+The AqAOA simulator is preinstalled in a Miniforge-based environment (`aqaoa`) which should already be activated when you log in. You generally do **not** need to install AqAOA into a new environment. If a new environment is required, or you do not want to use the provided Miniforge-based environment you can simply install the package using any python dependency manger, e.g. with pip simply run:
+
+```bash
+pip install ~/aqaoa/pyaqaoa-0.1.1-cp311-cp311-linux_x86_64.whl
+```
+
+The following prebuilt wheels are available:
+
+- `~/aqaoa/pyaqaoa-0.1.1-cp311-cp311-linux_x86_64.whl`
+- `~/aqaoa/pyaqaoa-0.1.1-cp312-cp312-linux_x86_64.whl`
 
 ## Installation
 
