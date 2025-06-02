@@ -38,13 +38,13 @@ AqAOA is a GPU accelerated QAOA simulation framework utilizing the [NVIDIA CUDA 
 
 ## Usage on AWS 
 
-[![Launch on AWS](https://img.shields.io/badge/Launch%20on-AWS-orange?logo=amazon-aws&style=for-the-badge)](https://aws.amazon.com/marketplace/pp/prodview-ynv4du526zpie)
+[![Launch on AWS](https://img.shields.io/badge/Launch%20on-AWS-orange?logo=amazon-aws&style=for-the-badge)](https://aws.amazon.com/marketplace/pp/prodview-umagmbgnitfe2)
 
-AqAOA is available as a preconfigured Amazon Machine Image (AMI) on the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-ynv4du526zpie), allowing you to run high-performance QAOA simulations on GPU-backed EC2 instances with minimal setup.
+AqAOA is available as a preconfigured Amazon Machine Image (AMI) on the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-umagmbgnitfe2), allowing you to run high-performance QAOA simulations on GPU-backed EC2 instances with minimal setup.
 
 ### Steps to Get Started
 
-1. Go to the [AqAOA AMI on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-ynv4du526zpie).
+1. Go to the [AqAOA AMI on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-umagmbgnitfe2).
 2. Subscribe to the AMI and follow the instructions to launch an EC2 instance.
 3. Choose a GPU-enabled EC2 instance type (*see overview below*).
 4. Connect to your instance via SSH and start using the AqAOA Python interface.
